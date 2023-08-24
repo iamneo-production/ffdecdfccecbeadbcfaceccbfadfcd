@@ -1,0 +1,34 @@
+<div class="col-md-6 offset-md-3">
+  <h3>CURRENCY-CONVERTER</h3>
+  
+  <form (ngSubmit)="showResult()">
+    <div class="form-control">
+      <label for="fromCurrency">FROM CURRENCY :</label>
+      <select class = "form-select form-select-sm" name="fromCurrency" id="fromCurrency"  [(ngModel)]="fromCurr" required>
+        <option value="1.126735">USD</option>
+        <option value="0.876893">GBP</option>
+        <option value="79.677056">INR</option>
+      </select>
+    </div>
+  
+    <div class="form-control">
+      <label for="toCurrency">TO CURRENCY :</label>
+      <select class = "form-select form-select-sm" name="toCurrency" id="toCurrency"  [(ngModel)]="toCurr" required>
+        <option value="1.126735">USD</option>
+        <option value="0.876893">GBP</option>
+        <option value="79.677056">INR</option>
+      </select>
+    </div>
+  
+    <div class="form-control">
+      <label for ="amount">Amount :</label>
+      <input type="number" name="amount" id="amount"  [(ngModel)]="amount" required>
+    </div>
+  
+    <input class ="btn btn-primary" type="submit" value="Submit" id="submitButton" ngDefaultControl>
+  
+    <div *ngIf="show" id="result">
+      <p id="resValue">{{amount | currencyconv:fromCurr:toCurr }}</p>
+    </div>
+  </form>
+  </div>
