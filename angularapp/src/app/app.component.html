@@ -26,9 +26,11 @@
     </div>
   
     <input class ="btn btn-primary" type="submit" value="Submit" id="submitButton" ngDefaultControl>
-  
-    <div *ngIf="show" id="result">
-      <p id="resValue">{{amount | currencyconv:fromCurr:toCurr }}</p>
+    <div id = "result" >
+      <div *ngIf="show">
+        <p id="resValue">{{amount | currencyconv:fromCurr:toCurr }}</p>
+      </div>
     </div>
+    
   </form>
   </div>
